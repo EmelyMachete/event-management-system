@@ -23,7 +23,11 @@
             <td>@ev.Location</td>
             <td>@ev.Capacity</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@ev.Id">Edit</a>
+                <a asp-action="Edit" asp-route-id="@ev.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@ev.Id"
+                   onclick="return confirm('Are you sure you want to delete this event?');">
+                    Delete
+                </a>
             </td>
 
         </tr>

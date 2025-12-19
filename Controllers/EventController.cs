@@ -37,6 +37,18 @@ namespace EventManagementSystem.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult Delete(int id)
+        {
+            var ev = events.Find(e => e.Id == id);
+
+            if (ev != null)
+            {
+                events.Remove(ev);
+            }
+
+            return RedirectToAction("Index");
+        }
+
 
 
 
