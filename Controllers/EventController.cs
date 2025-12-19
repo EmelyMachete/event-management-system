@@ -1,32 +1,53 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using EventManagementSystem.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EventManagementSystem.Controllers
 {
     public class EventController : Controller
     {
-        // Shared in-memory list (temporary, no database yet)
-        private static List<Event> events = new List<Event>
+        // Temporary in-memory data store (will be replaced by database)
+        private static List<Event> _events = new List<Event>
         {
             new Event { Id = 1, Name = "Tech Conference", Location = "Johannesburg", Capacity = 100 },
             new Event { Id = 2, Name = "Business Workshop", Location = "Pretoria", Capacity = 50 }
         };
 
-        // READ
+        // READ: List all events
         public IActionResult Index()
         {
-            return View(events);
+            return View(_events);
         }
+
+        // CREATE: Show form
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // CREATE: Handle form submission
+        [HttpPost]
+        public IActionResult Create(Event ev)
+        {
+            ev.Id = _events.Count > 0 ? _events.Max(e => e.Id) + 1 : 1;
+            _events.Add(ev);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        // EDIT: Show edit form
         public IActionResult Edit(int id)
         {
-            var ev = events.Find(e => e.Id == id);
+            var ev = _events.FirstOrDefault(e => e.Id == id);
             return View(ev);
         }
+
+        // EDIT: Handle edit submission
         [HttpPost]
         public IActionResult Edit(Event ev)
         {
-            var existingEvent = events.Find(e => e.Id == ev.Id);
+            var existingEvent = _events.FirstOrDefault(e => e.Id == ev.Id);
 
             if (existingEvent != null)
             {
@@ -35,41 +56,20 @@ namespace EventManagementSystem.Controllers
                 existingEvent.Capacity = ev.Capacity;
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
+
+        // DELETE: Remove event
         public IActionResult Delete(int id)
         {
-            var ev = events.Find(e => e.Id == id);
+            var ev = _events.FirstOrDefault(e => e.Id == id);
 
             if (ev != null)
             {
-                events.Remove(ev);
+                _events.Remove(ev);
             }
 
-            return RedirectToAction("Index");
-        }
-
-
-
-
-
-        // CREATE (GET)
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // CREATE (POST)
-        [HttpPost]
-        public IActionResult Create(Event ev)
-        {
-            ev.Id = events.Count + 1;
-            events.Add(ev);
-
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
     }
 }
-
-
-
