@@ -18,6 +18,28 @@ namespace EventManagementSystem.Controllers
         {
             return View(events);
         }
+        public IActionResult Edit(int id)
+        {
+            var ev = events.Find(e => e.Id == id);
+            return View(ev);
+        }
+        [HttpPost]
+        public IActionResult Edit(Event ev)
+        {
+            var existingEvent = events.Find(e => e.Id == ev.Id);
+
+            if (existingEvent != null)
+            {
+                existingEvent.Name = ev.Name;
+                existingEvent.Location = ev.Location;
+                existingEvent.Capacity = ev.Capacity;
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
+
 
         // CREATE (GET)
         public IActionResult Create()

@@ -5,6 +5,8 @@
 </p>
 
 <h2>Events</h2>
+<th>Actions</th>
+
 
 <table border="1" cellpadding="5">
     <tr>
@@ -15,10 +17,17 @@
 
     @foreach (var ev in Model)
     {
+
         <tr>
             <td>@ev.Name</td>
             <td>@ev.Location</td>
             <td>@ev.Capacity</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@ev.Id">Edit</a>
+            </td>
+
         </tr>
+        
+
     }
 </table>

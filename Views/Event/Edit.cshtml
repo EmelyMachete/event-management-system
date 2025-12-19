@@ -1,0 +1,25 @@
+﻿@model EventManagementSystem.Models.Event
+
+<h2>Edit Event</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Name</label><br />
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label>Location</label><br />
+        <input asp-for="Location" />
+    </div>
+
+    <div>
+        <label>Capacity</label><br />
+        <input asp-for="Capacity" type="number" />
+    </div>
+
+    <br />
+    <button type="submit">Save Changes</button>
+</form>
