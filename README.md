@@ -1,36 +1,64 @@
 # Event Management System
 
-An ASP.NET Core MVC web application developed to demonstrate full CRUD functionality, MVC architecture, and clean C# development practices.
+## Overview
+The Event Management System is a web-based application built using **ASP.NET Core MVC**, **C#**, and **SQL** with **Entity Framework Core**. The system is designed to support event planning and management by allowing users to create, view, update, and delete event records through a structured and user-friendly interface.
 
-## 🚀 Features
-- View a list of events
-- Create new events
-- Edit existing events
-- Delete events with confirmation
-- Clean separation of concerns using MVC
+This project demonstrates practical backend development skills, including MVC architecture, database integration, and CRUD operations using industry-standard tools.
 
-## 🛠 Technologies Used
-- C#
-- ASP.NET Core MVC
-- Razor Views
-- Git & GitHub
+---
 
-## 📂 Project Structure
-- **Models** – Define application data structures
-- **Controllers** – Handle requests and application logic
-- **Views** – User interface built with Razor
+## Features
+- Create, view, update, and delete events
+- SQL database integration using Entity Framework Core
+- MVC architecture (Models, Views, Controllers)
+- Data persistence with migrations
+- Form handling and server-side validation
+- Clean and maintainable C# code structure
 
-## ▶️ How to Run the Project
-1. Clone the repository
-2. Open the solution in Visual Studio
-3. Run the project using IIS Express
-4. Navigate to `/Event/Index` in the browser
+---
 
-## 📌 Purpose
-This project was built as part of my professional portfolio to demonstrate practical ASP.NET Core MVC development skills, including CRUD operations and structured problem-solving, for junior and graduate software developer roles.
+## Technologies Used
+- **C#**
+- **ASP.NET Core MVC (.NET 8)**
+- **Entity Framework Core 8**
+- **SQL Server**
+- **Razor Views**
+- **Git & GitHub**
 
-## 👤 Author
-**Emely Mokgadi Machete**
+---
 
-- GitHub: https://github.com/EmelyMachete
-- LinkedIn: https://www.linkedin.com/in/emelymachete/
+## Project Structure
+- **Models** – Defines the Event entity and data structure
+- **Controllers** – Handles application logic and database operations
+- **Views** – Razor views for displaying and managing events
+- **Data** – ApplicationDbContext and EF Core configuration
+- **Migrations** – Database schema management
+
+---
+
+## Learning Outcomes
+Through this project, I strengthened my understanding of:
+- ASP.NET Core MVC application flow
+- Entity Framework Core and database migrations
+- SQL-backed CRUD operations
+- Dependency Injection in ASP.NET Core
+- Building structured, maintainable backend systems
+
+---
+
+## Future Improvements
+- User authentication and role-based access
+- Vendor and attendee management
+- Reporting and analytics
+- UI enhancements
+
+---
+
+## Author
+**Emely Mokgadi Machete**  
+Bachelor of IT  
+Junior Software Developer  
+
+📧 Email: macheteemely@gmail.com  
+🔗 LinkedIn: https://www.linkedin.com/in/emelymachete  
+💻 GitHub: https://github.com/EmelyMachete
