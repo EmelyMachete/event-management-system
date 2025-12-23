@@ -53,6 +53,17 @@ Through this project, I strengthened my understanding of:
 - UI enhancements
 
 ---
+## 📸 Screenshots
+
+### Events List
+![Events List](screenshots/events-list.png)
+
+### Create Event
+![Create Event](screenshots/create-event.png)
+
+### Edit Event
+![Edit Event](screenshots/edit-event.png)
+
 
 ## Author
 **Emely Mokgadi Machete**  
