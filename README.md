@@ -1,56 +1,101 @@
-# Event Management System
+Event Management System
 
-## Overview
-The Event Management System is a web-based application built using **ASP.NET Core MVC**, **C#**, and **SQL** with **Entity Framework Core**. The system is designed to support event planning and management by allowing users to create, view, update, and delete event records through a structured and user-friendly interface.
+ASP.NET Core MVC | C# | Entity Framework Core | SQL Server
 
-This project demonstrates practical backend development skills, including MVC architecture, database integration, and CRUD operations using industry-standard tools.
+Overview
 
----
+The Event Management System is a database-driven web application designed to manage events through a structured and maintainable backend architecture. The system supports creating, viewing, updating, and deleting event records while enforcing data integrity and predictable application behavior.
 
-## Features
-- Create, view, update, and delete events
-- SQL database integration using Entity Framework Core
-- MVC architecture (Models, Views, Controllers)
-- Data persistence with migrations
-- Form handling and server-side validation
-- Clean and maintainable C# code structure
+This project was built to demonstrate sound software engineering fundamentals, including MVC separation of concerns, persistence using Entity Framework Core, and disciplined backend design suitable for enterprise web applications.
 
----
+Problem Statement
 
-## Technologies Used
-- **C#**
-- **ASP.NET Core MVC (.NET 8)**
-- **Entity Framework Core 8**
-- **SQL Server**
-- **Razor Views**
-- **Git & GitHub**
+Organizations often require simple internal systems to manage structured data such as events, schedules, or bookings. These systems must ensure correctness, validation, and maintainability rather than visual complexity.
 
----
+This application addresses that need by providing a clean, server-side managed event system where data consistency and predictable behavior are prioritized.
 
-## Project Structure
-- **Models** – Defines the Event entity and data structure
-- **Controllers** – Handles application logic and database operations
-- **Views** – Razor views for displaying and managing events
-- **Data** – ApplicationDbContext and EF Core configuration
-- **Migrations** – Database schema management
+Core Features
 
----
+Create, view, edit, and delete events (CRUD)
 
-## Learning Outcomes
-Through this project, I strengthened my understanding of:
-- ASP.NET Core MVC application flow
-- Entity Framework Core and database migrations
-- SQL-backed CRUD operations
-- Dependency Injection in ASP.NET Core
-- Building structured, maintainable backend systems
+SQL-backed persistence using Entity Framework Core
 
----
+Server-side validation to prevent invalid application states
 
-## Future Improvements
-- User authentication and role-based access
-- Vendor and attendee management
-- Reporting and analytics
-- UI enhancements
+Structured MVC architecture separating concerns across layers
+
+Code-first database migrations
+
+Technology Stack
+
+Language: C#
+
+Framework: ASP.NET Core MVC
+
+ORM: Entity Framework Core
+
+Database: SQL Server
+
+Architecture: Model–View–Controller (MVC)
+
+System Design & Engineering Decisions
+MVC Architecture
+
+The application follows the MVC pattern to clearly separate responsibilities:
+
+Models define the domain structure and validation rules
+
+Controllers manage request handling and application flow
+
+Views present data without embedding business logic
+
+This separation improves maintainability, testability, and long-term extensibility.
+
+Entity Framework Core
+
+Entity Framework Core is used for:
+
+Mapping domain models to relational tables
+
+Managing schema evolution through code-first migrations
+
+Ensuring consistency between application logic and stored data
+
+Server-Side Validation
+
+Validation rules are enforced at the model level to ensure:
+
+Invalid data cannot be persisted
+
+Application state remains consistent
+
+Business rules are respected regardless of client behavior
+
+Assumptions & Limitations
+
+Single-user context (no authentication or role separation)
+
+No external integrations (e.g. email, payments)
+
+Designed for correctness and structure, not high-traffic scalability
+
+UI kept intentionally simple to emphasize backend design
+
+What I Would Improve Next
+
+If this system were extended further, the next logical improvements would include:
+
+User authentication and role-based access control
+
+Audit logging for event changes
+
+Pagination and filtering for large datasets
+
+Deployment configuration for production environments
+
+Outcome
+
+This project demonstrates the ability to design and implement a stable, maintainable, database-driven web application aligned with enterprise development standards. The focus was placed on correctness, structure, and engineering discipline rather than surface-level features.
 
 ---
 ## 📸 Screenshots
